@@ -1,0 +1,13 @@
+E:\visual basic\ProjectQuarry\ProjectQuarry\bin\Debug\ProjectQuarry.exe.config
+E:\visual basic\ProjectQuarry\ProjectQuarry\bin\Debug\ProjectQuarry.exe
+E:\visual basic\ProjectQuarry\ProjectQuarry\bin\Debug\ProjectQuarry.pdb
+E:\visual basic\ProjectQuarry\ProjectQuarry\bin\Debug\ProjectQuarry.xml
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.vbproj.AssemblyReference.cache
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.vbproj.SuggestedBindingRedirects.cache
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.Form1.resources
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.Resources.resources
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.vbproj.GenerateResource.cache
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.vbproj.CoreCompileInputs.cache
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.exe
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.xml
+E:\visual basic\ProjectQuarry\ProjectQuarry\obj\Debug\ProjectQuarry.pdb
