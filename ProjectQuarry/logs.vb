@@ -23,6 +23,7 @@
         Dim oldStock As Integer = If(logEntries.Count > 0, logEntries.Last().LogStock, 0)
 
         If stockpile > oldStockpile Then
+            'this if statement goes as if resource value is greater than the old resource value then the resource becomes the old resource
             oldStockpile = stockpile
             Dim text_stamp = formattedTime & formattedLogs
             Dim existingEntry = logEntries.FirstOrDefault(Function(entry) entry.LogStock = stockpile)

@@ -7,6 +7,13 @@
     Public iron, copper, silicon, silver, gold As Integer
     Public iron_counter, copper_counter, silicon_counter, silver_counter, gold_counter As Integer
 
+
+    'Need to figure this out
+    Public Class extractedResource
+        Public resource1Names As String() = {"water", "wood", "coal", "gas", "oil"}
+        Public resource1Counter As Integer() = {3, 5, 10, 15, 20}
+    End Class
+    Public lvl1Resource As New List(Of extractedResource)
     '============================================================================================
     Public Sub New(water_req, wood_req, coal_req, gas_req, oil_req, fire_req, temp_req)
         water = 0
@@ -33,15 +40,14 @@
     End Sub
 
     Public Sub getMinedOres(second As Double, counter As Integer, ByRef stockpile As Integer)
-        If second Mod counter = 0 Then
-            stockpile += 1
-        End If
-        'getWater()
+            If second Mod counter = 0 Then
+                stockpile += 1
+            End If
+            'getWater()
 
-    End Sub
+        End Sub
     'this section of code gets and returns the value of each stockpiles that had been extracted
     Public Function getWater()
-        'Console.WriteLine("water: " & water)
         Return water
     End Function
     Public Function getWood()
@@ -57,10 +63,9 @@
         Return oil
     End Function
     Public Function getFire()
-        Return fire
-    End Function
+            Return fire
+        End Function
     Public Function getTemperature()
         Return temp
     End Function
-
 End Class

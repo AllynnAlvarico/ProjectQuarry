@@ -9,13 +9,14 @@ Public Class Form1
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
+        'on this intializer, the code here is to make it easier to adjust the counter
+        '(water, wood, coal, gas, oil, fire and temperature) this are the format when inserting a value on a counter/interval to produce resource
         objResource = New resources(3, 5, 10, 15, 25, 35, 45)
     End Sub
 
-
+    'this is when the program is open or run the app timer start [appTimer.startTime(gameTimer)]
     Private Sub currency_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         appTimer.startTime(gameTimer)
-
     End Sub
 
     Private Sub gameTimer_Tick(sender As Object, e As EventArgs) Handles gameTimer.Tick
