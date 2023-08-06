@@ -6,4 +6,4 @@ Welcome to my self-improvement programming journey. In this repository, I am emb
 this is just to improve my programming skills and learn how to create a functioning program and game.
 
 email me if you have a question(s) about my code and if you see any bugs or how to improve my program.
-thank you
+thank you allynn_alvarico@yahoo.com
