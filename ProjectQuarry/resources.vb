@@ -1,17 +1,11 @@
 ﻿Public Class resources
     Public logs As New logs
-
-
-    'Basic Resource Name and Resource Counter
-    Public basic_ResourceNameAndCounter As Dictionary(Of String, Integer)()
-
     Public water, wood, coal, gas, oil As Integer
     Public water_counter, wood_counter, coal_counter, gas_counter, oil_counter As Integer
     Public fire, temp As Integer
     Public fire_counter, temp_counter As Integer
     Public iron, copper, silicon, silver, gold As Integer
     Public iron_counter, copper_counter, silicon_counter, silver_counter, gold_counter As Integer
-
     Public Sub New(water_req, wood_req, coal_req, gas_req, oil_req, fire_req, temp_req)
         'this adds the strings and value of the counter for the "basicResName
         water = 0
@@ -37,7 +31,7 @@
     End Sub
     'Need to figure this out
     Public Class extractedResource
-        Public resource1Names As String() = {"water", "wood", "coal", "gas", "oil"}
+        Public resource1Names As String() = {NameOf(resources.water)}
         Public resource1Counter As Integer() = {3, 5, 10, 15, 20}
     End Class
     Public lvl1Resource As New List(Of extractedResource)
