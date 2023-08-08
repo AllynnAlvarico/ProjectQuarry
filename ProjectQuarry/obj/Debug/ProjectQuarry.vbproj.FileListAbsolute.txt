@@ -24,3 +24,4 @@ D:\Programming\Visual Basic Projects\project quarry\ProjectQuarry\bin\Debug\Proj
 D:\Programming\Visual Basic Projects\project quarry\ProjectQuarry\bin\Debug\ProjectQuarry.exe
 D:\Programming\Visual Basic Projects\project quarry\ProjectQuarry\bin\Debug\ProjectQuarry.pdb
 D:\Programming\Visual Basic Projects\project quarry\ProjectQuarry\bin\Debug\ProjectQuarry.xml
+D:\Programming\Visual Basic Projects\project quarry\ProjectQuarry\obj\Debug\ProjectQuarry.inventoryWindow.resources

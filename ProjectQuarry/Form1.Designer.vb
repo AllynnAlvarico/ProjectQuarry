@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
@@ -35,6 +35,7 @@ Partial Class Form1
         Me.gamelog = New System.Windows.Forms.Label()
         Me.addLogs = New System.Windows.Forms.Button()
         Me.btnclear = New System.Windows.Forms.Button()
+        Me.openIntventory = New System.Windows.Forms.Button()
         CType(Me.pickaxe_img, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,13 +109,15 @@ Partial Class Form1
         Me.gamelog.BackColor = System.Drawing.Color.White
         Me.gamelog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.gamelog.Location = New System.Drawing.Point(12, 53)
+        Me.gamelog.MaximumSize = New System.Drawing.Size(300, 455)
+        Me.gamelog.MinimumSize = New System.Drawing.Size(300, 455)
         Me.gamelog.Name = "gamelog"
-        Me.gamelog.Size = New System.Drawing.Size(301, 454)
+        Me.gamelog.Size = New System.Drawing.Size(300, 455)
         Me.gamelog.TabIndex = 5
         '
         'addLogs
         '
-        Me.addLogs.Location = New System.Drawing.Point(654, 321)
+        Me.addLogs.Location = New System.Drawing.Point(371, 519)
         Me.addLogs.Name = "addLogs"
         Me.addLogs.Size = New System.Drawing.Size(75, 23)
         Me.addLogs.TabIndex = 6
@@ -123,18 +126,28 @@ Partial Class Form1
         '
         'btnclear
         '
-        Me.btnclear.Location = New System.Drawing.Point(735, 321)
+        Me.btnclear.Location = New System.Drawing.Point(452, 519)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(75, 23)
         Me.btnclear.TabIndex = 7
         Me.btnclear.Text = "Clear Logs"
         Me.btnclear.UseVisualStyleBackColor = True
         '
+        'openIntventory
+        '
+        Me.openIntventory.Location = New System.Drawing.Point(767, 214)
+        Me.openIntventory.Name = "openIntventory"
+        Me.openIntventory.Size = New System.Drawing.Size(75, 23)
+        Me.openIntventory.TabIndex = 8
+        Me.openIntventory.Text = "Inventory"
+        Me.openIntventory.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.openIntventory)
         Me.Controls.Add(Me.btnclear)
         Me.Controls.Add(Me.addLogs)
         Me.Controls.Add(Me.gamelog)
@@ -144,7 +157,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.MaximumSize = New System.Drawing.Size(1920, 1080)
-        Me.MinimumSize = New System.Drawing.Size(1918, 1078)
+        Me.MinimumSize = New System.Drawing.Size(1918, 1030)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.pickaxe_img, System.ComponentModel.ISupportInitialize).EndInit()
@@ -165,4 +178,5 @@ Partial Class Form1
     Friend WithEvents gamelog As Label
     Friend WithEvents addLogs As Button
     Friend WithEvents btnclear As Button
+    Friend WithEvents openIntventory As Button
 End Class

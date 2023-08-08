@@ -5,7 +5,6 @@ Public Class Form1
     Public animation As New animation
     Public conlog As New logs
     Public objResource As resources
-
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
@@ -64,6 +63,11 @@ Public Class Form1
     Public Sub ExtractCopperAndLog()
         objResource.getMinedOres(appTimer.second, objResource.copper_counter, objResource.copper)
         conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.copper, objResource.getStrCopper)
+    End Sub
+
+    Private Sub openIntventory_Click(sender As Object, e As EventArgs) Handles openIntventory.Click
+        inventoryWindow.Show()
+        openIntventory.Enabled = False
     End Sub
 
 End Class
