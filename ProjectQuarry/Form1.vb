@@ -11,7 +11,7 @@ Public Class Form1
         InitializeComponent()
         'on this intializer, the code here is to make it easier to adjust the counter
         '(water, wood, coal, gas, oil, fire and temperature) this are the format when inserting a value on a counter/interval to produce resource
-        objResource = New resources(3, 5, 10, 15, 25, 35, 45)
+        objResource = New resources()
     End Sub
 
     'this is when the program is open or run the app timer start [appTimer.startTime(gameTimer)]
@@ -21,9 +21,8 @@ Public Class Form1
 
     Private Sub gameTimer_Tick(sender As Object, e As EventArgs) Handles gameTimer.Tick
         appTimer.gameClock()
-        appTimer.getConsoleLogs()
-        ExtractWaterAndLog()
-        ExtractWoodAndLog()
+        'appTimer.getConsoleLogs()
+        level1Resource()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -38,12 +37,33 @@ Public Class Form1
         conlog.clear_logs(gamelog, btnclear)
     End Sub
     'this section of methods are the extracted resource, by doing this makes the code a bit cleaner, segregated and easier to maintain and adjust if needed
+    'Level 1 Resource
+    Public Sub level1Resource()
+        ExtractWaterAndLog()
+        ExtractWoodAndLog()
+        ExtractCoalAndLog()
+        ExtractIronAndLog()
+        ExtractCopperAndLog()
+    End Sub
     Public Sub ExtractWaterAndLog()
         objResource.getMinedOres(appTimer.second, objResource.water_counter, objResource.water)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.water, NameOf(objResource.water))
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.water, objResource.getStrWater)
     End Sub
     Public Sub ExtractWoodAndLog()
         objResource.getMinedOres(appTimer.second, objResource.wood_counter, objResource.wood)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.wood, NameOf(objResource.wood))
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.wood, objResource.getStrWood)
     End Sub
+    Public Sub ExtractCoalAndLog()
+        objResource.getMinedOres(appTimer.second, objResource.coal_counter, objResource.coal)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.coal, objResource.getStrCoal)
+    End Sub
+    Public Sub ExtractIronAndLog()
+        objResource.getMinedOres(appTimer.second, objResource.iron_counter, objResource.iron)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.iron, objResource.getStrIron)
+    End Sub
+    Public Sub ExtractCopperAndLog()
+        objResource.getMinedOres(appTimer.second, objResource.copper_counter, objResource.copper)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.copper, objResource.getStrCopper)
+    End Sub
+
 End Class
