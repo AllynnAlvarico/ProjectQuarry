@@ -12,26 +12,21 @@ Public Class Form1
         '(water, wood, coal, gas, oil, fire and temperature) this are the format when inserting a value on a counter/interval to produce resource
         objResource = New resources()
     End Sub
-
     'this is when the program is open or run the app timer start [appTimer.startTime(gameTimer)]
     Private Sub currency_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         appTimer.startTime(gameTimer)
     End Sub
-
     Private Sub gameTimer_Tick(sender As Object, e As EventArgs) Handles gameTimer.Tick
         appTimer.gameClock()
         'appTimer.getConsoleLogs()
         level1Resource()
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         animation.pickaxe_frame_animation(pickaxe_animation, pickaxe_img, Timer1)
     End Sub
-
     Private Sub addLogs_Click(sender As Object, e As EventArgs) Handles addLogs.Click
         objResource.getWater()
     End Sub
-
     Private Sub clear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
         conlog.clear_logs(gamelog, btnclear)
     End Sub
@@ -64,7 +59,6 @@ Public Class Form1
         objResource.getMinedOres(appTimer.second, objResource.copper_counter, objResource.copper)
         conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.copper, objResource.getStrCopper)
     End Sub
-
     Private Sub openIntventory_Click(sender As Object, e As EventArgs) Handles openIntventory.Click
         inventoryWindow.Show()
         openIntventory.Enabled = False

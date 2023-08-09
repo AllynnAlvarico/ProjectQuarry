@@ -19,15 +19,6 @@
     Public fire, temp As Integer ' not needed yet
     Public fire_counter, temp_counter As Integer ' not needed yet
     Public Sub New()
-        ''/////Level 1 Resource
-        'water, wood, coal, iron, copper = 0
-        ''/////Level 2 Resource
-        'tin, silver, gold = 0
-        ''/////Level 3 Resource
-        'aluminum, platinum, tungsten = 0
-        ''/////Level 1 Creation
-        'fire, temp = 0 ' not needed yet
-        '===================================
         'this sets the value of each counter
         'Level 1 Counters
         water_counter = r1_Counter(0)
