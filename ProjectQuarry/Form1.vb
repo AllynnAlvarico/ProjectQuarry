@@ -4,13 +4,17 @@ Public Class Form1
     Public appTimer As New game_timer
     Public animation As New animation
     Public conlog As New logs
-    Public objResource As resources
+
+    Public waterObj = New Resource("Water", 1)
+    Public woodObj = New Resource("Wood", 5)
+    Public coalObj = New Resource("Coal", 10)
+    Public ironObj = New Resource("Iron", 10)
+    Public copperObj = New Resource("Copper", 8)
+    Public maxResource As Integer = 10
+
     Public Sub New()
-        ' This call is required by the designer.
         InitializeComponent()
         'on this intializer, the code here is to make it easier to adjust the counter
-        '(water, wood, coal, gas, oil, fire and temperature) this are the format when inserting a value on a counter/interval to produce resource
-        objResource = New resources()
     End Sub
     'this is when the program is open or run the app timer start [appTimer.startTime(gameTimer)]
     Private Sub currency_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,46 +26,39 @@ Public Class Form1
         level1Resource()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        animation.pickaxe_frame_animation(pickaxe_animation, pickaxe_img, Timer1)
+        animation.pickaxe_frame_animation(pickaxe_animation, pickaxe_img, animationTimer)
     End Sub
     Private Sub addLogs_Click(sender As Object, e As EventArgs) Handles addLogs.Click
-        objResource.getWater()
     End Sub
     Private Sub clear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
         conlog.clear_logs(gamelog, btnclear)
     End Sub
-    'this section of methods are the extracted resource, by doing this makes the code a bit cleaner, segregated and easier to maintain and adjust if needed
-    'Level 1 Resource
     Public Sub level1Resource()
-        ExtractWaterAndLog()
-        ExtractWoodAndLog()
-        ExtractCoalAndLog()
-        ExtractIronAndLog()
-        ExtractCopperAndLog()
+        ExtractResource()
+        Extractlogs()
     End Sub
-    Public Sub ExtractWaterAndLog()
-        objResource.getMinedOres(appTimer.second, objResource.water_counter, objResource.water)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.water, objResource.getStrWater)
+    Public Sub ExtractResource()
+        minedMinerals(appTimer.second, waterObj)
+        minedMinerals(appTimer.second, woodObj)
+        minedMinerals(appTimer.second, coalObj)
+        minedMinerals(appTimer.second, ironObj)
+        minedMinerals(appTimer.second, copperObj)
     End Sub
-    Public Sub ExtractWoodAndLog()
-        objResource.getMinedOres(appTimer.second, objResource.wood_counter, objResource.wood)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.wood, objResource.getStrWood)
+    Public Sub Extractlogs()
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, waterObj)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, woodObj)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, coalObj)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, ironObj)
+        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, copperObj)
     End Sub
-    Public Sub ExtractCoalAndLog()
-        objResource.getMinedOres(appTimer.second, objResource.coal_counter, objResource.coal)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.coal, objResource.getStrCoal)
-    End Sub
-    Public Sub ExtractIronAndLog()
-        objResource.getMinedOres(appTimer.second, objResource.iron_counter, objResource.iron)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.iron, objResource.getStrIron)
-    End Sub
-    Public Sub ExtractCopperAndLog()
-        objResource.getMinedOres(appTimer.second, objResource.copper_counter, objResource.copper)
-        conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, objResource.copper, objResource.getStrCopper)
-    End Sub
-    Private Sub openIntventory_Click(sender As Object, e As EventArgs) Handles openIntventory.Click
-        inventoryWindow.Show()
-        openIntventory.Enabled = False
+    Public Sub minedMinerals(second As Double, resourceOBJ As Resource)
+        If second Mod resourceOBJ.getProdutionTime = 0 Then
+            If resourceOBJ.getProdStockpile < maxResource Then
+                resourceOBJ.setStockpile(1)
+            ElseIf resourceOBJ.getProdStockpile >= maxResource Then
+                conlog.time_logs(gamelog, appTimer.getHour, appTimer.getMinute, appTimer.getSecond, resourceOBJ)
+            End If
+        End If
     End Sub
 
 End Class

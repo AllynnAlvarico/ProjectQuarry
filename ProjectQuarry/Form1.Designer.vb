@@ -30,12 +30,13 @@ Partial Class Form1
         Me.pickaxe_img = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.animationTimer = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.gamelog = New System.Windows.Forms.Label()
         Me.addLogs = New System.Windows.Forms.Button()
         Me.btnclear = New System.Windows.Forms.Button()
         Me.openIntventory = New System.Windows.Forms.Button()
+        Me.waterBar = New System.Windows.Forms.ProgressBar()
         CType(Me.pickaxe_img, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +73,7 @@ Partial Class Form1
         Me.pickaxe_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.pickaxe_img.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pickaxe_img.Image = Global.ProjectQuarry.My.Resources.Resources.pixil_frame1
-        Me.pickaxe_img.Location = New System.Drawing.Point(12, 510)
+        Me.pickaxe_img.Location = New System.Drawing.Point(12, 526)
         Me.pickaxe_img.Name = "pickaxe_img"
         Me.pickaxe_img.Size = New System.Drawing.Size(32, 32)
         Me.pickaxe_img.TabIndex = 2
@@ -89,7 +90,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(50, 510)
+        Me.Button1.Location = New System.Drawing.Point(50, 526)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 32)
         Me.Button1.TabIndex = 3
@@ -117,7 +118,7 @@ Partial Class Form1
         '
         'addLogs
         '
-        Me.addLogs.Location = New System.Drawing.Point(371, 519)
+        Me.addLogs.Location = New System.Drawing.Point(76, 710)
         Me.addLogs.Name = "addLogs"
         Me.addLogs.Size = New System.Drawing.Size(75, 23)
         Me.addLogs.TabIndex = 6
@@ -126,27 +127,35 @@ Partial Class Form1
         '
         'btnclear
         '
-        Me.btnclear.Location = New System.Drawing.Point(452, 519)
+        Me.btnclear.Location = New System.Drawing.Point(131, 526)
         Me.btnclear.Name = "btnclear"
-        Me.btnclear.Size = New System.Drawing.Size(75, 23)
+        Me.btnclear.Size = New System.Drawing.Size(75, 32)
         Me.btnclear.TabIndex = 7
         Me.btnclear.Text = "Clear Logs"
         Me.btnclear.UseVisualStyleBackColor = True
         '
         'openIntventory
         '
-        Me.openIntventory.Location = New System.Drawing.Point(767, 214)
+        Me.openIntventory.Location = New System.Drawing.Point(432, 748)
         Me.openIntventory.Name = "openIntventory"
         Me.openIntventory.Size = New System.Drawing.Size(75, 23)
         Me.openIntventory.TabIndex = 8
         Me.openIntventory.Text = "Inventory"
         Me.openIntventory.UseVisualStyleBackColor = True
         '
+        'waterBar
+        '
+        Me.waterBar.Location = New System.Drawing.Point(346, 56)
+        Me.waterBar.Name = "waterBar"
+        Me.waterBar.Size = New System.Drawing.Size(100, 20)
+        Me.waterBar.TabIndex = 9
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.waterBar)
         Me.Controls.Add(Me.openIntventory)
         Me.Controls.Add(Me.btnclear)
         Me.Controls.Add(Me.addLogs)
@@ -173,10 +182,11 @@ Partial Class Form1
     Friend WithEvents pickaxe_img As PictureBox
     Friend WithEvents pickaxe_animation As ImageList
     Friend WithEvents Button1 As Button
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents animationTimer As Timer
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents gamelog As Label
     Friend WithEvents addLogs As Button
     Friend WithEvents btnclear As Button
     Friend WithEvents openIntventory As Button
+    Friend WithEvents waterBar As ProgressBar
 End Class
